@@ -24,6 +24,8 @@ import icon7 from "../../assets/icon7.svg";
 import icon8 from "../../assets/icon8.svg";
 import icon9 from "../../assets/icon9.svg";
 import Slider from '../../components/Slider'
+import TextSlider from '../../components/TextSlider'
+import IconSlider from '../../components/IconSlider'
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -471,6 +473,8 @@ const DesktopView = () => {
   );
 };
 
+
+
 const MobileView = () => {
   useEffect(() => {
     AOS.init({ duration: 700 });
@@ -484,11 +488,11 @@ const MobileView = () => {
     // </div>
 
    
-      <div className="mt-24 sm:text-2xl relative">
+      <div className="mt-24 sm:text-2xl relative bg-slate-50">
       {/* {isMobile?<></>:circle_bordered} */}
       {/* section 1 */}
-        <div className="flex flex-col justify-center items-center ">
-          <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 my-2 sm:text-4xl">
+        <div className="flex flex-col justify-center items-center -mt-8">
+          <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 mt-8 sm:text-4xl">
             Recording vitals like never before
           </h1>
 
@@ -511,7 +515,7 @@ const MobileView = () => {
           </p>
         </div>
 
-        <div className="flex flex-row justify-start gap-6 m-6">
+        {/* <div className="flex flex-row justify-start gap-6 m-6">
              <img src={icon6} className="sm:w-[4rem] w-[2.6rem]"></img>
              <img src={icon7} className="sm:w-[4rem] w-[2.6rem]"></img>
              <img src={icon8} className="sm:w-[4rem] w-[2.6rem]"></img>
@@ -520,7 +524,11 @@ const MobileView = () => {
 
         <div className="mt-4">
             <Slider sentences={sentences}/>
-        </div>  
+        </div>   */}
+
+        <div className="">
+          <IconSlider/>
+        </div>
 
         <h1 data-aos="fade-up" className="flex justify-start font-montserrat text-start text-white font-bold text-2xl mt-16 m-6 mb-0">
         Powered by advanced <br />
@@ -576,25 +584,28 @@ const MobileView = () => {
             Connect with a doctor
         </h1>
       
-        <div className=" flex justify-center py-24 items-center mt-40">
+        <div className=" flex justify-center items-center mt-8 overflow-hidden">
           <img
             src={ellipse}
-            style={{  }}
-            className="absolute mb-24 w-20rem overflow-hidden md:-mt-32 "
+            style={{width: '115%', maxWidth: 'none', height: 'auto', }}
           ></img>
-
-          <div className="flex justify-center items-center -mt-52">
-            <img
-              src={doctor}
-              style={{  }}
-              className=" z-20"
-            ></img>
-          </div>
         </div>
 
+
+          <div className="flex justify-center items-center -mt-[27rem]">
+            <img
+              src={doctor}
+              style={{ }}
+              className="rounded-2xl z-20 "
+            ></img>
+          </div>
+
+        <div className="z-30">
+            <TextSlider/>
+          </div>
       </div>
 
-      <div className="footer-container text-white overflow-x-hidden min-w-full bg-black flex justify-center pt-8 mt-28 font-primary sm:text-xl md:text-2xl ">
+      <div className="footer-container text-white overflow-x-hidden min-w-full bg-black flex justify-center pt-8 mt-20 font-primary sm:text-xl md:text-2xl ">
         <div className="flex flex-col">
           <img
             src={ausalogowhite}
