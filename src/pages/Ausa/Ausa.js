@@ -537,7 +537,7 @@ const MobileView = () => {
       </div>
 
       <div className="flex flex-col justify-center mt-28">
-          <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl">
+          <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl sm:mt-64">
             AUSA Vital Hub in action
           </h1>
 
@@ -572,7 +572,7 @@ const MobileView = () => {
       </div>
 
       <div className="flex flex-col mt-10">
-        <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl">
+        <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl z-10 md:mb-32 sm:mb-20">
             Connect with a doctor
         </h1>
       
@@ -580,14 +580,14 @@ const MobileView = () => {
           <img
             src={ellipse}
             style={{  }}
-            className="absolute mb-24 w-20rem overflow-hidden"
+            className="absolute mb-24 w-20rem overflow-hidden md:-mt-32 "
           ></img>
 
           <div className="flex justify-center items-center -mt-52">
             <img
               src={doctor}
               style={{  }}
-              className="absolute z-20"
+              className=" z-20"
             ></img>
           </div>
         </div>
@@ -628,7 +628,7 @@ const MobileView = () => {
 
 
 const Ausa = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 640px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 1200px)` });
 
   return(
     <div>
