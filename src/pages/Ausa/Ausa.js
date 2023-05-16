@@ -8,8 +8,6 @@ import ReactPlayer from "react-player";
 import device from "../../assets/device.png";
 import bg from "../../assets/bg.svg";
 import line from "../../assets/line.png";
-import blueBg from "../../assets/blueBg.png";
-import blueBg2 from "../../assets/blueBg2.png";
 import ellipse from "../../assets/ellipse.png";
 import doctor from "../../assets/doctor.png";
 import footerlogo from "../../assets/footerlogo.png";
@@ -19,13 +17,9 @@ import icon2 from "../../assets/icon2.png";
 import icon3 from "../../assets/icon3.png";
 import icon4 from "../../assets/icon4.png";
 import icon5 from "../../assets/icon5.png";
-import icon6 from "../../assets/icon6.svg";
-import icon7 from "../../assets/icon7.svg";
-import icon8 from "../../assets/icon8.svg";
-import icon9 from "../../assets/icon9.svg";
-import Slider from '../../components/Slider'
 import TextSlider from '../../components/TextSlider'
 import IconSlider from '../../components/IconSlider'
+import LandingSlider from '../../components/LandingSlider'
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -76,12 +70,6 @@ const Text = styled(motion.div)`
     position.includes("bottom-right") ? "8rem" : "auto"};
 `;
 
-const sentences =[
-  "Get preliminary diagnosis and contact a medical professional.",
-  "See vital history, and track differences",
-  "A GSM module to solve connectivity issue",
-  "Save money while doing tests",
-]
 
 const texts = [
   [
@@ -277,39 +265,41 @@ const DesktopView = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
-        <div className=" relative w-max">
-          <img className="" src={blueBg}></img>
-          <p data-aos="fade-up" className="absolute sm:text-3xl text-2xl top-16 left-16 m-6 text-white font-montserrat">
+    
+        <div className="flex flex-col mt-4 p-12 h-[68rem] bg-bluebg1 w-full bg-rep">
+        <div className="flex mt-10">
+        <p data-aos="fade-up" className="flex justify-center text-3xl text-white font-montserrat ml-4">
+          
             An affordable & portable product for families & <br /> organisations
             to capture and record the elementary vitals <br /> of the user, for
             the purpose of telemedicine and initial <br /> point of care.
           </p>
-
-          <div className="absolute flex flex-row sm:gap-28 gap-20 m-6 top-72 left-16">
-            <img src={icon6} className="sm:w-[4rem] w-[2rem]"></img>
-            <img src={icon7} className="sm:w-[4rem] w-[2rem]"></img>
-            <img src={icon8} className="sm:w-[4rem] w-[2rem]"></img>
-            <img src={icon9} className="sm:w-[3.3rem] w-[1.3rem]"></img>
           </div>
 
-          <div className="absolute flex top-96 ml-20 mt-14">
-            <Slider sentences={sentences}/>
+    
+        <div className="mt-10 mb-2">
+          <IconSlider/>
+        </div>
+
+        <div className="flex flex-row justify-between">
+          <div className="flex flex-col mt-36">
+          <h1 data-aos="fade-up" className="flex justify-start font-montserrat text-start text-white font-bold text-3xl mt-16 ml-4">
+                  Powered by advanced <br />
+                      A.I. Technology
+          </h1>
+
+          <p data-aos="fade-up" className="flex justify-start text-2xl ml-4 mt-8 text-white font-montserrat">
+            Vital HUB provides personalised <br/> Health insights, anomaly detection <br/> and risk prediction.
+          </p>
           </div>
 
-          <p data-aos="fade-up" className="absolute sm:text-3xl text-2xl bottom-80 left-16 text-white font-montserrat font-extrabold">
-            Powered by advanced <br />
-            A.I. Technology
-          </p>
-          <p data-aos="fade-up" className="absolute sm:text-2xl text-xl bottom-44 left-16 text-white font-montserrat">
-            Vital HUB provides personalised <br /> Health insights, anomaly
-            detection <br /> and risk prediction.
-          </p>
-          <img src={device} className="absolute -bottom-40 right-0"></img>
+          <div className="-mr-12">
+            <img src={device} ></img>
+          </div>
         </div>
       </div>
 
-      <div className="flex justify-center mt-60 mb-20">
+      <div className="flex justify-center mt-96 mb-20">
         <img src={line}></img>
         <h1 className="absolute  font-montserrat font-extrabold text-3xl text-blue-700">
           AUSA Vital Hub in action
@@ -489,25 +479,19 @@ const MobileView = () => {
 
    
       <div className="mt-24 sm:text-2xl relative bg-slate-50">
-      {/* {isMobile?<></>:circle_bordered} */}
-      {/* section 1 */}
         <div className="flex flex-col justify-center items-center -mt-8">
-          <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 mt-8 sm:text-4xl">
+          <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 mt-14 sm:text-4xl">
             Recording vitals like never before
           </h1>
 
-          <img src={bg} className="mt-8"></img>
+          <img src={bg} className="mt-16"></img>
 
-          <div className="flex flex-row justify-center items-center gap-4 mt-6 ">
-            <img src={icon1} className="sm:w-[4rem] w-[3rem]"></img>
-            <img src={icon2} className="sm:w-[4rem] w-[3rem]"></img>
-            <img src={icon3} className="sm:w-[4rem] w-[3rem]"></img>
-            <img src={icon4} className="sm:w-[4rem] w-[3rem]"></img>
-            <img src={icon5} className="sm:w-[4rem] w-[3rem]"></img>
+          <div>
+            <LandingSlider/>
           </div>
 
-      <div className="flex flex-col mt-4 h-[68rem] bg-bluebg w-full bg-rep">
-        <div className="flex mt-6">
+      <div className="flex flex-col mt-24 h-[70rem] bg-bluebg2 w-full bg-rep">
+        <div className="flex mt-8">
           <p data-aos="fade-up" className="flex justify-center text-2xl m-6 text-white font-montserrat">
               An affordable & portable product for families & organisations
               to capture and record the <br/> elementary vitals of the user, for
@@ -515,16 +499,6 @@ const MobileView = () => {
           </p>
         </div>
 
-        {/* <div className="flex flex-row justify-start gap-6 m-6">
-             <img src={icon6} className="sm:w-[4rem] w-[2.6rem]"></img>
-             <img src={icon7} className="sm:w-[4rem] w-[2.6rem]"></img>
-             <img src={icon8} className="sm:w-[4rem] w-[2.6rem]"></img>
-             <img src={icon9} className="sm:w-[3.3rem] w-[2rem]"></img>
-        </div>
-
-        <div className="mt-4">
-            <Slider sentences={sentences}/>
-        </div>   */}
 
         <div className="">
           <IconSlider/>

@@ -12,6 +12,8 @@ module.exports = {
   
         backgroundImage: {
           'bluebg': "url('assets/blueBg2.png')",
+          'bluebg1': "url('assets/blueBg1.png')",
+          'bluebg2': "url('assets/blueBg3.png')"
         },
   
         colors:{
