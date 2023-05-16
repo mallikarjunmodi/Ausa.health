@@ -297,7 +297,7 @@ const DesktopView = () => {
 
           <p data-aos="fade-up" className="absolute sm:text-3xl text-2xl bottom-80 left-16 text-white font-montserrat font-extrabold">
             Powered by advanced <br />
-            A.I. Technology{" "}
+            A.I. Technology
           </p>
           <p data-aos="fade-up" className="absolute sm:text-2xl text-xl bottom-44 left-16 text-white font-montserrat">
             Vital HUB provides personalised <br /> Health insights, anomaly
@@ -472,13 +472,157 @@ const DesktopView = () => {
 };
 
 const MobileView = () => {
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+  }, []);
   return(
-    <div className='h-full flex flex-col px-12  justify-around mt-24  sm:mt-0 sm:justify-between items-center'>
-       <h2 className='text-center text-3xl font-montserrat font-medium mt-4'>Please view in desktop</h2>
-       <img className='sm:h-[26rem] sm:w-[26rem]  mt-20' src={trafficcone}></img>
-       <h2 className='text-center text-xl font-primary font-light'><span className='font-bold'>ausa.health </span>page is under construction</h2>
-       <img className='sm:max-h-[30rem] sm:max-w-[30rem] -mt-5'src={ausalogo}></img>
-    </div>
+    // <div className='h-full flex flex-col px-12  justify-around mt-24  sm:mt-0 sm:justify-between items-center'>
+    //    <h2 className='text-center text-3xl font-montserrat font-medium mt-4'>Please view in desktop</h2>
+    //    <img className='sm:h-[26rem] sm:w-[26rem]  mt-20' src={trafficcone}></img>
+    //    <h2 className='text-center text-xl font-primary font-light'><span className='font-bold'>ausa.health </span>page is under construction</h2>
+    //    <img className='sm:max-h-[30rem] sm:max-w-[30rem] -mt-5'src={ausalogo}></img>
+    // </div>
+
+   
+      <div className="mt-24 sm:text-2xl relative">
+      {/* {isMobile?<></>:circle_bordered} */}
+      {/* section 1 */}
+        <div className="flex flex-col justify-center items-center ">
+          <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 my-2 sm:text-4xl">
+            Recording vitals like never before
+          </h1>
+
+          <img src={bg} className="mt-8"></img>
+
+          <div className="flex flex-row justify-center items-center gap-4 mt-6 ">
+            <img src={icon1} className="sm:w-[4rem] w-[3rem]"></img>
+            <img src={icon2} className="sm:w-[4rem] w-[3rem]"></img>
+            <img src={icon3} className="sm:w-[4rem] w-[3rem]"></img>
+            <img src={icon4} className="sm:w-[4rem] w-[3rem]"></img>
+            <img src={icon5} className="sm:w-[4rem] w-[3rem]"></img>
+          </div>
+
+      <div className="flex flex-col mt-4 h-[68rem] bg-bluebg w-full bg-rep">
+        <div className="flex mt-6">
+          <p data-aos="fade-up" className="flex justify-center text-2xl m-6 text-white font-montserrat">
+              An affordable & portable product for families & organisations
+              to capture and record the <br/> elementary vitals of the user, for
+              the purpose of telemedicine and initial point of care.
+          </p>
+        </div>
+
+        <div className="flex flex-row justify-start gap-6 m-6">
+             <img src={icon6} className="sm:w-[4rem] w-[2.6rem]"></img>
+             <img src={icon7} className="sm:w-[4rem] w-[2.6rem]"></img>
+             <img src={icon8} className="sm:w-[4rem] w-[2.6rem]"></img>
+             <img src={icon9} className="sm:w-[3.3rem] w-[2rem]"></img>
+        </div>
+
+        <div className="mt-4">
+            <Slider sentences={sentences}/>
+        </div>  
+
+        <h1 data-aos="fade-up" className="flex justify-start font-montserrat text-start text-white font-bold text-2xl mt-16 m-6 mb-0">
+        Powered by advanced <br />
+            A.I. Technology
+        </h1>
+        <p data-aos="fade-up" className="flex justify-start text-base m-6 text-white font-montserrat">
+          Vital HUB provides personalised Health insights, anomaly detection and risk prediction.
+        </p>
+
+        <div className="flex justify-center items-center mt-10 ml-8">
+          <img src={device} ></img>
+        </div>
+
+      </div>
+
+      <div className="flex flex-col justify-center mt-28">
+          <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl">
+            AUSA Vital Hub in action
+          </h1>
+
+          <div className="flex justify-center mt-4">
+            <ReactPlayer
+              controls
+              width="90vw"
+              height="50vw"
+              url="https://youtu.be/7sDY4m8KNL"
+            ></ReactPlayer>
+          </div>
+      </div>
+
+      <div className="flex flex-col mt-16 h-[54rem] bg-bluebg w-full bg-rep">
+        <h1 className="flex justify-start font-montserrat text-start text-white font-bold text-2xl mt-12 m-6 mb-0">
+          Stay in tune with <br/>your health
+        </h1>
+        
+        <div data-aos="fade-up" className="bg-white rounded-tr-3xl rounded-br-3xl drop-shadow-[0_31px_55px_rgba(255, 255, 255, 0.21)] mr-16 mt-10">
+          <p className="text-black p-6 font-bold text-lg font-primary">Take charge of your well-being with our easy-to-use device that measures</p>
+        </div>
+
+        <div data-aos="fade-up" className="justify-end bg-white rounded-tl-3xl rounded-bl-3xl drop-shadow-[0_31px_55px_rgba(255, 255, 255, 0.21)] ml-16 mt-6">
+          <p className="text-black p-6 font-bold text-lg font-primary">Stay connected to your health with Ausa VitalHub - 
+          The ultimate telemedicine device that brings comprehensive, medical-grade vital monitoring and seamless doctor consultations right into your home.</p>
+        </div>
+
+        <div data-aos="fade-up" className="bg-white rounded-tr-3xl rounded-br-3xl drop-shadow-[0_31px_55px_rgba(255, 255, 255, 0.21)] mr-16 mt-6">
+          <p className="text-black p-6 font-bold text-lg font-primary">Ensuring you and your loved ones receive the best possible care in today's fast-paced, digital world. Say hello to a healthier future with VitalHub.</p>
+        </div>
+
+      </div>
+
+      <div className="flex flex-col mt-10">
+        <h1 className="font-montserrat text-center text-blue-600 font-bold text-2xl mx-4 my-2 sm:text-4xl">
+            Connect with a doctor
+        </h1>
+      
+        <div className=" flex justify-center py-24 items-center mt-40">
+          <img
+            src={ellipse}
+            style={{  }}
+            className="absolute mb-24 w-20rem overflow-hidden"
+          ></img>
+
+          <div className="flex justify-center items-center -mt-52">
+            <img
+              src={doctor}
+              style={{  }}
+              className="absolute z-20"
+            ></img>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="footer-container text-white overflow-x-hidden min-w-full bg-black flex justify-center pt-8 mt-28 font-primary sm:text-xl md:text-2xl ">
+        <div className="flex flex-col">
+          <img
+            src={ausalogowhite}
+            className="w-[15rem] justify-center ml-10"
+          ></img>
+          <p className="text-gray-500 mb-7 flex justify-center text-lg">By</p>
+          <img
+            className="mb-10 w-[20rem]"
+            src={footerlogo}
+            alt="PRAR LABS PVT LTD."
+          ></img>
+          <p className="text-gray-400 mb-4 flex justify-center text-lg">
+            Get in touch...
+          </p>
+
+          <div className="flex items-center gap-2 justify-center font-primary mb-20 text-lg ">
+            <img className="h-4" src={mail}></img>
+            <h4>prarlabs@gmail.com</h4>
+          </div>
+        </div>
+      </div>
+
+      
+        </div>
+      </div>
+    
+      
+
   )
 }
 

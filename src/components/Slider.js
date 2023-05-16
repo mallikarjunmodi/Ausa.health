@@ -36,8 +36,8 @@ const Slider = ({ sentences }) => {
       {/* <p className="text-lg  font-medium">{sentences[activeIndex]}</p>
       <div className="bg-white opacity-25 p-4 rounded-[20px] shadow w-[28rem] h-[6rem]">
       </div> */}
-        <div className="flex p-5 max-w-md  h-[6rem] bg-[#496cc9] rounded-[14px]  hover:cursor-default">
-            <p className="flex justify-center items-center text-white text-lg font-semibold font-montserrat break-normal">{sentences[activeIndex]}</p>
+        <div className="flex p-5 sm:max-w-md w-[21rem] h-[6rem] bg-[#496cc9] rounded-[14px]  hover:cursor-default">
+            <p className="flex justify-center items-center text-white sm:text-lg text-[0.9rem] font-semibold font-montserrat break-normal">{sentences[activeIndex]}</p>
 
         </div>
       
