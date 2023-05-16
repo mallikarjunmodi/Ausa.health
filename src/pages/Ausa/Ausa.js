@@ -23,6 +23,7 @@ import icon6 from "../../assets/icon6.svg";
 import icon7 from "../../assets/icon7.svg";
 import icon8 from "../../assets/icon8.svg";
 import icon9 from "../../assets/icon9.svg";
+import Slider from '../../components/Slider'
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -72,6 +73,13 @@ const Text = styled(motion.div)`
   margin-left: ${({ position }) =>
     position.includes("bottom-right") ? "8rem" : "auto"};
 `;
+
+const sentences =[
+  "Get preliminary diagnosis and contact a medical professional.",
+  "See vital history, and track differences",
+  "A GSM module to solve connectivity issue",
+  "Save money while doing tests",
+]
 
 const texts = [
   [
@@ -134,7 +142,8 @@ const DesktopView = () => {
       return;
     }
 
-    const newIndex = deltaY > 0 ? currentSet + 1 : currentSet - 1;
+    // const newIndex = deltaY > 0 ? currentSet + 1 : currentSet - 1;
+    const newIndex = deltaY > 0 ? Math.min(currentSet + 1, texts.length - 1) : Math.max(currentSet - 1, 0);
 
     setCurrentSet(newIndex);
 
@@ -146,14 +155,27 @@ const DesktopView = () => {
     });
 
     // setCurrentSet((prevSet) => prevSet + (deltaY > 0 ? 1 : -1));
-    setActiveDot((prevDot) => prevDot + (deltaY > 0 ? 1 : -1));
+    // setActiveDot((prevDot) => prevDot + (deltaY > 0 ? 1 : -1));
+
+    setActiveDot((prevDot) => {
+      const maxDots = texts.length;
+      let newDot = prevDot + (deltaY > 0 ? 1 : -1);
+      if (newDot < 0) {
+        newDot = maxDots - 1;
+      } else if (newDot >= maxDots) {
+        newDot = 0;
+      }
+      return newDot;
+    });
+
 
     timeoutRef.current = setTimeout(() => {
       setIsLocked(false);
-    }, 3000 + distance * 1000);
+    }, 3000 + distance * 2000);
 
     setIsLocked(true);
   };
+  
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -175,7 +197,7 @@ const DesktopView = () => {
     <div className="bg-slate-50 mt-48">
       <div className="flex flex-col -mt-28">
         <div className="flex justify-center">
-          <h1 className="m-12 font-extrabold text-blue-700 text-2xl sm:text-3xl font-montserrat">
+          <h1 className="mt-14 mb-16 font-extrabold text-blue-700 text-2xl sm:text-3xl font-montserrat">
             Recording vitals like never before
           </h1>
         </div>
@@ -222,6 +244,8 @@ const DesktopView = () => {
           <img src={icon4} className="sm:w-[4rem] w-[3rem]"></img>
           <img src={icon5} className="sm:w-[4rem] w-[3rem]"></img>
         </div>
+
+        
         <div
           style={{
             display: "flex",
@@ -241,7 +265,7 @@ const DesktopView = () => {
                 background: index === activeDot ? "#1D4ED8" : "#c2e3fc",
                 scale: index === activeDot ? "1.5" : "1",
                 cursor: "pointer",
-              }}
+              }}              
               onClick={() => {
                 setCurrentSet(index);
                 setActiveDot(index);
@@ -254,7 +278,7 @@ const DesktopView = () => {
       <div className="flex justify-center items-center">
         <div className=" relative w-max">
           <img className="" src={blueBg}></img>
-          <p className="absolute sm:text-3xl text-2xl top-16 left-16 m-6 text-white font-montserrat">
+          <p data-aos="fade-up" className="absolute sm:text-3xl text-2xl top-16 left-16 m-6 text-white font-montserrat">
             An affordable & portable product for families & <br /> organisations
             to capture and record the elementary vitals <br /> of the user, for
             the purpose of telemedicine and initial <br /> point of care.
@@ -268,19 +292,14 @@ const DesktopView = () => {
           </div>
 
           <div className="absolute flex top-96 ml-20 mt-14">
-            <div data-aos="fade-up">
-              <p className="absolute p-5 text-white text-lg font-medium font-montserrat">
-                Get preliminary diagnosis and contact a medical professional.
-              </p>
-              <div className=" w-[28rem] h-[6rem] text-white bg-white opacity-25 rounded-[20px] hover:scale-105 duration-100 hover:font-bold hover:cursor-default"></div>
-            </div>
+            <Slider sentences={sentences}/>
           </div>
 
-          <p className="absolute sm:text-3xl text-2xl bottom-80 left-16 text-white font-montserrat font-extrabold">
+          <p data-aos="fade-up" className="absolute sm:text-3xl text-2xl bottom-80 left-16 text-white font-montserrat font-extrabold">
             Powered by advanced <br />
             A.I. Technology{" "}
           </p>
-          <p className="absolute sm:text-2xl text-xl bottom-44 left-16 text-white font-montserrat">
+          <p data-aos="fade-up" className="absolute sm:text-2xl text-xl bottom-44 left-16 text-white font-montserrat">
             Vital HUB provides personalised <br /> Health insights, anomaly
             detection <br /> and risk prediction.
           </p>

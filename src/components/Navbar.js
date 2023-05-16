@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import "font-awesome/css/font-awesome.min.css";
-import logo from "../assets/logo.png";
-import hamy from "../assets/ham.svg";
-import cross from "../assets/cross.svg";
-import white_logo from "../assets/white_logo.png";
 import ausa_logo from "../assets/ausaLogo.png";
-import ausalogowhite from "../assets/ausalogowhite.png";
 
 const Navbar = () => {
   const [hamclicked, sethamclicked] = useState(true);
@@ -14,7 +9,7 @@ const Navbar = () => {
     <div className="flex flex-col sm:mb-[12rem]  bg-white">
         <div className={hamclicked ? "navbar-white" : "navbar-black"}>
         <img className=" sm:w-56 sm:mt-8 mt-5 w-32 sm:-ml-1 -ml-8" src={ausa_logo}></img>
-        <p className="font-montserrat sm:text-lg text-sm sm:mr-10 -mr-4">Prar.io</p>
+        <p className="font-montserrat sm:text-lg text-sm sm:mr-10 -mr-4"><a href="https://prar.io/" target="_blank">Prar.io</a> </p>
         </div>
     </div>
   );
