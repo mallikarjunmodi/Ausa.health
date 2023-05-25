@@ -12,11 +12,12 @@ import ellipse from "../../assets/ellipse.png";
 import doctor from "../../assets/doctor.png";
 import footerlogo from "../../assets/footerlogo.png";
 import mail from "../../assets/mail.png";
-import icon1 from "../../assets/icon1.png";
-import icon2 from "../../assets/icon2.png";
-import icon3 from "../../assets/icon3.png";
-import icon4 from "../../assets/icon4.png";
-import icon5 from "../../assets/icon5.png";
+import icon1 from "../../assets/icon1.svg";
+import icon2 from "../../assets/icon2.svg";
+import icon3 from "../../assets/icon3.svg";
+import icon4 from "../../assets/icon4.svg";
+import icon5 from "../../assets/icon5.svg";
+import star from "../../assets/star.svg";
 import TextSlider from '../../components/TextSlider'
 import IconSlider from '../../components/IconSlider'
 import LandingSlider from '../../components/LandingSlider'
@@ -132,7 +133,6 @@ const DesktopView = () => {
       return;
     }
 
-    // const newIndex = deltaY > 0 ? currentSet + 1 : currentSet - 1;
     const newIndex = deltaY > 0 ? Math.min(currentSet + 1, texts.length - 1) : Math.max(currentSet - 1, 0);
 
     setCurrentSet(newIndex);
@@ -144,8 +144,6 @@ const DesktopView = () => {
       return newShowText;
     });
 
-    // setCurrentSet((prevSet) => prevSet + (deltaY > 0 ? 1 : -1));
-    // setActiveDot((prevDot) => prevDot + (deltaY > 0 ? 1 : -1));
 
     setActiveDot((prevDot) => {
       const maxDots = texts.length;
@@ -167,21 +165,30 @@ const DesktopView = () => {
   };
   
 
-  useEffect(() => {
-    const handleScroll = (event) => {
-      if (isLocked) {
-        event.preventDefault();
-        handleScrollDistance(event);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = (event) => {
+  //     if (isLocked) {
+  //       event.preventDefault();
+  //       handleScrollDistance(event);
+  //     }
+  //   };
 
-    window.addEventListener("wheel", handleScroll, { passive: false });
+  //   window.addEventListener("wheel", handleScroll, { passive: false });
 
-    return () => {
-      clearTimeout(timeoutRef.current);
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, [currentSet, isLocked]);
+  //   return () => {
+  //     clearTimeout(timeoutRef.current);
+  //     window.removeEventListener("wheel", handleScroll);
+  //   };
+  // }, [currentSet, isLocked]);
+
+
+  const [activeIcon, setActiveIcon] = useState(1);
+
+  const handleIconClick = (iconNumber) => {
+    setActiveIcon(iconNumber);
+  };
+  
+  
 
   return (
     <div className="bg-slate-50 mt-48">
@@ -198,7 +205,7 @@ const DesktopView = () => {
           <TextContainer onWheel={handleScrollDistance} className="absolute">
             {texts.map((set, index) => (
               <React.Fragment key={index}>
-                {showText[index] && (
+                {activeIcon === index+1 && (
                   <React.Fragment>
                     {set.map((text, textIndex) => (
                       <Text
@@ -227,41 +234,73 @@ const DesktopView = () => {
           </TextContainer>
         </div>
 
-        <div className="flex flex-row justify-center items-center sm:gap-14 gap-8 mt-6 ">
-          <img src={icon1} className="sm:w-[4rem] w-[3rem]"></img>
-          <img src={icon2} className="sm:w-[4rem] w-[3rem]"></img>
-          <img src={icon3} className="sm:w-[4rem] w-[3rem]"></img>
-          <img src={icon4} className="sm:w-[4rem] w-[3rem]"></img>
-          <img src={icon5} className="sm:w-[4rem] w-[3rem]"></img>
-        </div>
 
+        <div className="flex flex-col items-center justify-center mt-6 ">
+        <div className="flex gap-7 sm:gap-14">
+        <div
+          className={`flex flex-col items-center cursor-pointer ${
+            activeIcon === 1 ? 'opacity-100 scale-110' : 'opacity-50'
+          }`}
+          onClick={() => handleIconClick(1)}
+        >
+          <img src={icon1} className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
         
         <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "1.4rem",
-            marginBottom: "3rem",
-          }}
+          className={`flex flex-col items-center cursor-pointer ${
+            activeIcon === 2 ? 'opacity-100 scale-110' : 'opacity-50'
+          }`}
+          onClick={() => handleIconClick(2)}
         >
-          {texts.map((_, index) => (
-            <div
-              key={index}
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                margin: "0 0.5rem",
-                background: index === activeDot ? "#1D4ED8" : "#c2e3fc",
-                scale: index === activeDot ? "1.5" : "1",
-                cursor: "pointer",
-              }}              
-              onClick={() => {
-                setCurrentSet(index);
-                setActiveDot(index);
-              }}
-            />
-          ))}
+          <img src={icon2} className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+
+        <div
+          className={`flex flex-col items-center cursor-pointer ${
+            activeIcon === 3 ? 'opacity-100 scale-110' : 'opacity-50'
+          }`}
+          onClick={() => handleIconClick(3)}
+        >
+          <img src={icon3} className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+
+        <div
+          className={`flex flex-col items-center cursor-pointer ${
+            activeIcon === 4 ? 'opacity-100 scale-110' : 'opacity-50'
+          }`}
+          onClick={() => handleIconClick(4)}
+        >
+          <img src={icon4} className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+
+        <div
+          className={`flex flex-col items-center cursor-pointer ${
+            activeIcon === 5 ? 'opacity-100 scale-110' : 'opacity-50'
+          }`}
+          onClick={() => handleIconClick(5)}
+        >
+          <img src={icon5} className="w-10 h-10 sm:w-14 sm:h-14" />
+        </div>
+        </div>
+
+        <div className='flex items-center gap-4 mb-12 -mt-2'>
+          <div onClick={() => handleIconClick(1)} className={`w-2 h-2 bg-blue-600 rounded-full mt-4 sm:mt-10 sm:mb-4 ${
+            activeIcon === 1 ? 'opacity-100 scale-150' : 'opacity-40'
+          }`}></div>
+          <div onClick={() => handleIconClick(2)} className={`w-2 h-2 bg-blue-600 rounded-full mt-4 sm:mt-10 sm:mb-4 ${
+            activeIcon === 2 ? 'opacity-100 scale-150' : 'opacity-40'
+          }`}></div>
+          <div onClick={() => handleIconClick(3)} className={`w-2 h-2 bg-blue-600 rounded-full mt-4 sm:mt-10 sm:mb-4 ${
+            activeIcon === 3 ? 'opacity-100 scale-150' : 'opacity-40'
+          }`}></div>
+          <div onClick={() => handleIconClick(4)} className={`w-2 h-2 bg-blue-600 rounded-full mt-4 sm:mt-10 sm:mb-4 ${
+            activeIcon === 4 ? 'opacity-100 scale-150' : 'opacity-40'
+          }`}></div>
+          <div onClick={() => handleIconClick(5)} className={`w-2 h-2 bg-blue-600 rounded-full mt-4 sm:mt-10 sm:mb-4 ${
+            activeIcon === 5 ? 'opacity-100 scale-150' : 'opacity-40'
+          }`}></div>
+
+        </div>
         </div>
       </div>
 
@@ -424,9 +463,9 @@ const DesktopView = () => {
               </div>
             </div>
             <div data-aos="fade-up">
-              <div className="flex justify-start px-4 gap-4  items-center w-[32rem] h-[6rem] bg-white drop-shadow-[0_31px_55px_rgba(22,75,217,0.05)] rounded-[19px]  font-medium hover:scale-105 duration-100 hover:font-bold hover:cursor-default ">
-              <div className="rounded-full border-solid border-black border-2 h-8 w-8 flex justify-center items-center">5</div>
-                <p className=" text-blue-700 text-lg font-primary ">
+              <div className="flex justify-start px-4 gap-0  items-center w-[32rem] h-[6rem] bg-white drop-shadow-[0_31px_55px_rgba(22,75,217,0.05)] rounded-[19px]  font-medium hover:scale-105 duration-100 hover:font-bold hover:cursor-default ">
+              <div className=""><img src={star} alt="5" className="mt-12 -ml-[4.3rem]"></img></div>
+                <p className="text-blue-700 text-lg font-primary -ml-[10.1rem]">
                   All at the convenience of your home :)
                 </p>
               </div>

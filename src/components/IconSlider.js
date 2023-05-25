@@ -62,7 +62,7 @@ const IconSlider = () => {
             activeIcon === 1 ? 'block' : 'hidden'
           }`}
         >
-          Get preliminary diagnisis and contact a medical professional.
+          Get preliminary diagnosis and contact a medical professional.
         </div>
 
         <div
