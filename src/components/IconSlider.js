@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import icon6 from '../assets/icon6.svg';
 import icon7 from '../assets/icon7.svg';
 import icon8 from '../assets/icon8.svg';
@@ -11,6 +11,15 @@ const IconSlider = () => {
   const handleIconClick = (iconNumber) => {
     setActiveIcon(iconNumber);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const nextIcon = activeIcon === 5 ? 1 : activeIcon + 1;
+      setActiveIcon(nextIcon);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [activeIcon]);
 
   return (
     <div className="flex flex-col items-start m-6">
@@ -80,7 +89,7 @@ const IconSlider = () => {
           A GSM module to solve connectivity issue
         </div>
         <div
-          className={`bg-[#3d62c5] text-white p-8 font-bold rounded-2xl sm:mx-[28rem] drop-shadow-[0_31px_55px_rgba(22, 75, 217, 0.05)] ${
+          className={`bg-[#3d62c5] text-white p-8 font-bold rounded-2xl sm:mx-[32rem] drop-shadow-[0_31px_55px_rgba(22, 75, 217, 0.05)] ${
             activeIcon === 4 ? 'block' : 'hidden'
           }`}
         >

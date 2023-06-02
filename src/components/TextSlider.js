@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TextSlider = () => {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -6,6 +6,16 @@ const TextSlider = () => {
   const handleSlideChange = (slideNumber) => {
     setActiveSlide(slideNumber);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const nextSlide = activeSlide === 5 ? 1 : activeSlide + 1;
+      setActiveSlide(nextSlide);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [activeSlide]);
+
 
   return (
     <div className="flex flex-col items-center font-primary">
@@ -52,7 +62,7 @@ const TextSlider = () => {
           5
         </div>
       </div>
-      {/* box-shadow: 0px 31px 55px rgba(22, 75, 217, 0.05); */}
+      
       <div className="m-8 mt-4">
         <div
           className={`bg-white p-8 font-bold rounded-2xl drop-shadow-[0_31px_55px_rgba(22, 75, 217, 0.05)] ${

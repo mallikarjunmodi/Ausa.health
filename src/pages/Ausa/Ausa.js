@@ -188,6 +188,14 @@ const DesktopView = () => {
     setActiveIcon(iconNumber);
   };
   
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const nextIcon = activeIcon === 5 ? 1 : activeIcon + 1;
+      setActiveIcon(nextIcon);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [activeIcon]);
   
 
   return (
@@ -200,7 +208,7 @@ const DesktopView = () => {
         </div>
 
         <div className="flex flex-col items-center">
-          <img src={bg} className="w-[34rem] m-auto"></img>
+          <img src={bg} alt="ausa_device" className="w-[34rem] m-auto"></img>
 
           <TextContainer onWheel={handleScrollDistance} className="absolute">
             {texts.map((set, index) => (

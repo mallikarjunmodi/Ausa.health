@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import icon1 from '../assets/icon1.svg';
 import icon2 from '../assets/icon2.svg';
 import icon3 from '../assets/icon3.svg';
@@ -12,6 +12,15 @@ const LandingSlider = () => {
   const handleIconClick = (iconNumber) => {
     setActiveIcon(iconNumber);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const nextIcon = activeIcon === 5 ? 1 : activeIcon + 1;
+      setActiveIcon(nextIcon);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [activeIcon]);
 
   return (
     <div className="flex flex-col items-center">
