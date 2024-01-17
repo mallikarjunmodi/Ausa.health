@@ -353,12 +353,12 @@ const DesktopView = () => {
         </h1>
       </div>
 
-      <div className="flex justify-center mb-20">
+      <div className="flex rounded-[30px] justify-center mb-20">
         <ReactPlayer
           controls
           width="1280px"
           height="720px"
-          url="https://youtu.be/7sDY4m8KNL"
+          url="https://youtu.be/vuqrqZOQ2pU"
         ></ReactPlayer>
       </div>
 

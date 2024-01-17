@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className="flex flex-col sm:mb-[12rem]  bg-white">
         <div className={hamclicked ? "navbar-white" : "navbar-black"}>
         <img className=" sm:w-56 sm:mt-8 mt-5 w-32 sm:-ml-1 -ml-8" src={ausa_logo}></img>
-        <p className="font-montserrat sm:text-lg text-sm sm:mr-10 -mr-4"><a href="https://prar.io/" target="_blank">Prar.io</a> </p>
+        <p className="font-montserrat sm:text-lg text-sm sm:mr-10 -mr-4"><a href="" target="_blank">Prar Labs</a> </p>
         </div>
     </div>
   );
