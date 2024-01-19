@@ -1,10 +1,10 @@
 export default function Notes() {
     return (
         <div className="w-full h-auto flex flex-col relative items-start">
-        <div className="flex flex-col items-start w-[90%] mx-auto bg-gray-100 rounded-[15px] p-2">
+        <div className="flex flex-col items-start w-[90%] mx-auto bg-[#FAFAFA] rounded-[10px] p-2">
         <input id='click3' type="checkbox"  class="absolute opacity-0 peer"/>
         <label for='click3' className="cursor-pointer w-full flex tracking-[1px] flex-col justify-start peer-checked:mb-2 mb-2 ">
-          <span for="click3" className="text-[#3F4856] text-xl w-full font-normal leading-6 ml-4 mt-2 ">
+          <span for="click3" className="text-[#9B9FA6] font-[20px] w-full font-manrope leading-6 ml-4 mt-2 ">
            Diagonosis
           </span>
           </label>
@@ -15,12 +15,12 @@ export default function Notes() {
   </svg>
 </div>   
           
-          <div className="flex w-full max-h-0 overflow-hidden  peer-checked:max-h-full flex flex-col ">
+          <div className="flex flex-col w-full max-h-0 overflow-hidden peer-checked:max-h-full ">
 
           <div className="flex flex-col items-center bg-[] w-full pl-4 pr-4">
             <textarea
               placeholder=" notes (optional)"
-              className=" w-[100%] h-40  border border-gray-400 mb-4 rounded-[5px] "
+              className=" w-[100%] h-40 p-2 border border-gray-400 mb-4 rounded-[5px] "
             ></textarea>
           </div>
         </div>

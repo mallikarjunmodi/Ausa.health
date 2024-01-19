@@ -9,6 +9,7 @@ import Paitents from '../components/paitents';
 import Tests from '../components/tests';
 import Notes from '../components/notes';
 import withAuth from '../components/withAuth'; // Import the HOC
+import { doc, getDoc } from 'firebase/firestore';
 
 const Home = () => {
   const [token, setToken] = useState('');
@@ -31,9 +32,9 @@ const Home = () => {
   
   
   return (
-    <main className=" relative flex w-full h-full  overflow-hidden min-h-screen items-center flex-col bg-[#D9D9D9] justify-start">
+    <main className=" relative flex w-full h-full  overflow-hidden min-h-screen items-center flex-col bg-[#E8EDF5] justify-start">
 
-      <div className=" top-0px left-0 bg-gray-50 w-full h-12">
+      <div className=" top-0px left-0 bg-[#FCFCFC] w-full h-12">
         <img alt="Ausalogo" src="/ausalogo.png" className="relative top-3.5  ml-5 w-[131.2px] h-[20px] " />
       </div>
       <div className="flex-1 ">
