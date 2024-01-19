@@ -26,10 +26,7 @@ const Home = () => {
   const navigateOnHangup = () => {
     navigate('/dashboard');
   
-    // Wait for 10 seconds before navigating to the root
-    setTimeout(() => {
-      navigate('/');
-    }, 10); // Delay in milliseconds (10000ms = 10s)
+    // Delay in milliseconds (10000ms = 10s)
   };
   
   
