@@ -4,7 +4,6 @@
 import {Link,Navigate,useNavigate,useLocation} from "react-router-dom";
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 const SESSION_TIMEOUT_HOURS = 2; // Set the session timeout limit here
 
 const Login = () => {
