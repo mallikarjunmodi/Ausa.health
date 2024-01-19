@@ -4,6 +4,7 @@ import './App.css';
 import Ausa from "./pages/Ausa/Ausa";
 import DoctorDashboard from "./pages/doc"
 import Consult from "./pages/call"
+import Login from "./pages/login"
 
 function App()  {
   
@@ -13,7 +14,7 @@ function App()  {
         <Routes>
         <Route path='/' element={<Ausa/>} />
         <Route path='/dashboard' element={<DoctorDashboard/>} />
-        <Route path='/login' element={<Ausa/>} />
+        <Route path='/login' element={<Login/>} />
         <Route path='/tele/consultation' element={<Consult/>} />
         </Routes>
       </Router>
