@@ -37,7 +37,7 @@ const Login = () => {
         if (username === 'ausahealth' && password === 'ausahealth') {
             localStorage.setItem('userToken', 'your-auth-token'); // Set token on successful login
             localStorage.setItem('loginTime', new Date().getTime().toString()); // Store the current time
-            navigate('/doc');
+            navigate('/dashboard');
         } else {
             alert('Invalid credentials');
         }
