@@ -24,6 +24,7 @@ import LandingSlider from '../../components/LandingSlider'
 import { useMediaQuery } from "react-responsive";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Navbar from "../../components/Navbar";
 
 <link rel="stylesheet" href="path/to/aos.css" />;
 
@@ -199,6 +200,9 @@ const DesktopView = () => {
   
 
   return (
+    <>
+          <Navbar/>
+
     <div className="bg-slate-50 mt-48">
       <div className="flex flex-col -mt-28">
         <div className="flex justify-center">
@@ -507,7 +511,9 @@ const DesktopView = () => {
         </div>
       </div>
     </div>
-  );
+    </>
+    );
+
 };
 
 
@@ -524,7 +530,9 @@ const MobileView = () => {
     //    <img className='sm:max-h-[30rem] sm:max-w-[30rem] -mt-5'src={ausalogo}></img>
     // </div>
 
-   
+   <>
+         <Navbar/>
+
       <div className="mt-24 sm:text-2xl relative bg-slate-50">
         <div className="flex flex-col justify-center items-center -mt-8">
           <h1 className="font-montserrat text-center text-blue-600 font-bold text-3xl mx-4 mt-14 sm:text-4xl">
@@ -652,7 +660,7 @@ const MobileView = () => {
       
         </div>
       </div>
-    
+      </>
       
 
   )
