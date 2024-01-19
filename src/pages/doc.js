@@ -1,7 +1,7 @@
 // pages/DoctorDashboard.js
 import React from 'react';
 // import { useRouter } from 'next/navigation'
-import {Link,Navigate,useNavigate,useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import  { useState, useEffect } from 'react';
 import CurrentTime from '../components/currentTime'
 import { format, parse , isWithinInterval, addMinutes  } from 'date-fns';
