@@ -1,4 +1,4 @@
-'use client'
+
 // pages/login.js
 // pages/login.js
 import {Link,Navigate,useNavigate,useLocation} from "react-router-dom";
