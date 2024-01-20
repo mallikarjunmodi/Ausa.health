@@ -2,6 +2,7 @@
 // pages/login.js
 // pages/login.js
 import {useNavigate} from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 import React, { useState, useEffect } from 'react';
 const SESSION_TIMEOUT_HOURS = 2; // Set the session timeout limit here
@@ -17,7 +18,7 @@ const Login = () => {
       // Simulate an async operation like fetching data
       setTimeout(() => {
         setIsLoading(false);
-      }, 1000); // 3 seconds delay for demonstration
+      }, 500); // 3 seconds delay for demonstration
     }, []);
   
 
@@ -60,6 +61,10 @@ const Login = () => {
     
 
     return (
+        <>
+              <Helmet>
+        <link rel="preload" href="url('assets/back.jpg')" as="image" />
+      </Helmet>
         <div className="flex justify-center items-center min-h-screen bg-cover  overflow-hidden bg-main-pattern text-manrope">
                     <div className=' flex justify-center items-center min-h-screen bg-[#010101]/50 w-full h-full'>
 
@@ -102,6 +107,8 @@ const Login = () => {
         </div>
         </div>
     </div>
+
+    </>
     );
 };
 

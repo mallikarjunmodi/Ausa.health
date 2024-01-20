@@ -1,5 +1,7 @@
 // pages/DoctorDashboard.js
 import React from 'react';
+import { Helmet } from 'react-helmet';
+
 // import { useRouter } from 'next/navigation'
 import {useNavigate} from "react-router-dom";
 import  { useState, useEffect } from 'react';
@@ -179,7 +181,7 @@ const DoctorDashboard = () => {
     // Simulate an async operation like fetching data
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000); // 3 seconds delay for demonstration
+    }, 500); // 3 seconds delay for demonstration
   }, []);
 
 
@@ -223,6 +225,10 @@ const DoctorDashboard = () => {
 
 
   return (
+    <>
+         <Helmet>
+        <link rel="preload" href="url('assets/back.jpg')" as="image" />
+      </Helmet>
     <main className="min-h-screen bg-cover  overflow-hidden bg-main-pattern text-manrope">
         <div className='min-h-screen bg-[#010101]/50 w-full h-full'>
                 <img alt="Ausalogo" src="/logoWhite.png" className='absolute top-[1rem] left-[2rem]' />
@@ -251,6 +257,7 @@ const DoctorDashboard = () => {
         </div>
 
     </main>
+    </>
   );
 };
 
