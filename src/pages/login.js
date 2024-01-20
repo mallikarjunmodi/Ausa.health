@@ -10,6 +10,16 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
+
+    
+    useEffect(() => {
+      // Simulate an async operation like fetching data
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000); // 3 seconds delay for demonstration
+    }, []);
+  
 
     const handleSessionTimeout = () => {
         const storedTime = localStorage.getItem('loginTime');
@@ -42,6 +52,12 @@ const Login = () => {
             alert('Invalid credentials');
         }
     };
+
+
+    if (isLoading) {
+        return <div className='h-screen flex items-center justify-center'> <img src="/loading.gif" alt="Loading..." /></div>; // Replace with your loading animation
+      }
+    
 
     return (
         <div className="flex justify-center items-center min-h-screen bg-cover  overflow-hidden bg-main-pattern text-manrope">

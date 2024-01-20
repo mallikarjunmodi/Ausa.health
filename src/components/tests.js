@@ -65,7 +65,7 @@ export default function Tests() {
     
 
           {/* Arrow icon here */}
-          <div className="absolute top-6 right-12 transform transition-transform duration-300 ease-in-out rotate-180 peer-checked:rotate-0">
+          <div className={`absolute top-6 right-12 transform transition-transform duration-300 ease-in-out ${isChecked ? 'rotate-0' : 'rotate-180'}`}>
           <svg width="15" height="10" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M0.293097 5.77247L6.0013 0L11.7071 5.77263C12.0972 6.16736 12.0977 6.80784 11.7081 7.20318C11.3485 7.5681 10.7823 7.59659 10.3904 7.28835L10.2963 7.20427L5.99982 2.8576L1.70351 7.20443C1.34328 7.56872 0.776987 7.5962 0.385663 7.28726L0.291697 7.20301C-0.0678189 6.83801 -0.0949399 6.26419 0.209957 5.86768L0.293097 5.77247Z" fill="#004575"/>
   </svg>
@@ -73,7 +73,7 @@ export default function Tests() {
         </label>
         <div className="flex w-full max-h-0 overflow-hidden  peer-checked:max-h-full flex-col ">
       {/* Render selected tests here */}
-          <div className={`flex mt-1 justify-center flex-wrap gap-2 ${selectedTests.length > 0 ? 'mb-4' : ''}`}>
+          <div className={`flex mb-2 mt-1 justify-center flex-wrap gap-2 ${selectedTests.length > 0 ? 'mb-4' : ''}`}>
             {selectedTests.map((test) => (
               <div key={test} className="flex items-center justify-between bg-[#20C389] rounded-full px-3 py-1 ">
                 <span className="text-[#FAFAFA] font-bold text-[12px]">{test}</span>

@@ -172,6 +172,16 @@ const DoctorDashboard = () => {
     const [docExp, setDocExp] = useState('');
     const [docField, setDocField] = useState('');
     const [docHosp, setDocHosp] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+
+    
+  useEffect(() => {
+    // Simulate an async operation like fetching data
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // 3 seconds delay for demonstration
+  }, []);
+
 
 
 
@@ -203,6 +213,12 @@ const DoctorDashboard = () => {
     experience: docExp,
     hospital: docHosp,
   };
+
+
+  if (isLoading) {
+    return <div className='h-screen flex items-center justify-center'> <img src="/loading.gif" alt="Loading..." /></div>; // Replace with your loading animation
+  }
+
 
 
 
