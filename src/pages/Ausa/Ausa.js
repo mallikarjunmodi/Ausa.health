@@ -583,7 +583,7 @@ const MobileView = () => {
               controls
               width="90vw"
               height="50vw"
-              url="https://youtu.be/7sDY4m8KNL"
+              url="https://www.youtube.com/watch?v=vuqrqZOQ2pU"
             ></ReactPlayer>
           </div>
       </div>
