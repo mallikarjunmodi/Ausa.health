@@ -25,7 +25,7 @@ export default function About() {
             Female
           </span>
         <div className="flex w-[100%] ">
-          <div className="flex flex-col w-[33%] items-center ">
+          <div className="flex flex-col w-[33%] items-left ">
             <span className="text-[#B6B6B6] text-[12px] font-manrope leading-6 mt-1 ">
               Age
             </span>
