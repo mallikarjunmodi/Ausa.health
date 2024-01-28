@@ -12,7 +12,7 @@ export default function Tests() {
 
   
     // Connect to the socket server
-    const newSocket = io('https://ausa-tele-socket-server-production.up.railway.app/');
+    const socket = io('https://ausa-tele-socket-server-production.up.railway.app/');
     socket.on('connect', () => {
       console.log('Connected to the server');
       // Send a message to the server upon connection
