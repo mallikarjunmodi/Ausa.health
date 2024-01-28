@@ -7,18 +7,28 @@ import io from 'socket.io-client';
 export default function Tests() {
   // State to keep track of selected tests
   const [selectedTests, setSelectedTests] = useState([]);
-  const [socket, setSocket] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-  useEffect(() => {
+  
     // Connect to the socket server
     const newSocket = io('https://ausa-tele-socket-server-production.up.railway.app/');
-    setSocket(newSocket);
+    socket.on('connect', () => {
+      console.log('Connected to the server');
+      // Send a message to the server upon connection
+      socket.emit('message', 'Hello Server!');
+    });
 
     // Disconnect on cleanup
-    return () => newSocket.disconnect();
-  }, []);
+    socket.on('disconnect', () => {
+      console.log('Disconnected from the server');
+    });
+
+    socket.on('message', (message) => {
+      console.log('Received message:', message);
+    });
+
+
   // Function to handle clicking on a test button
   const handleTestClick = (test) => {
     setSelectedTests((prevSelectedTests) => {
@@ -35,9 +45,8 @@ export default function Tests() {
 
   const sendTests = () => {
     console.log('Selected tests to send:', selectedTests);
-    if (socket) {
       socket.emit('send-tests', selectedTests);
-    }
+  
 
     // Show popup
     setShowPopup(true);
