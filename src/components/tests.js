@@ -10,23 +10,27 @@ export default function Tests() {
   const [showPopup, setShowPopup] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-  
-    // Connect to the socket server
-    const socket = io('https://ausa-tele-socket-server-production.up.railway.app/');
+  const socket = io('https://ausa-tele-socket-server-production.up.railway.app/');
+
+  useEffect(() => {
+    // Establish the socket connection inside useEffect
+
     socket.on('connect', () => {
       console.log('Connected to the server');
-      // Send a message to the server upon connection
       socket.emit('message', 'Hello Server!');
-    });
-
-    // Disconnect on cleanup
-    socket.on('disconnect', () => {
-      console.log('Disconnected from the server');
     });
 
     socket.on('message', (message) => {
       console.log('Received message:', message);
     });
+
+    // Clean up the socket connection when the component unmounts
+    return () => {
+      console.log('Disconnecting socket...');
+      socket.disconnect();
+    };
+  }, []);
+
 
 
   // Function to handle clicking on a test button
@@ -44,8 +48,10 @@ export default function Tests() {
   };
 
   const sendTests = () => {
+    console.log('sendTests called');
+
     console.log('Selected tests to send:', selectedTests);
-      socket.emit('send-tests', selectedTests);
+      socket.emit('message', selectedTests);
   
 
     // Show popup
