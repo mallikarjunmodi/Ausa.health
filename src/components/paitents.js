@@ -51,7 +51,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col justify-start items-start">
-          <span className="text-[#B6B6B6] text-[12px] font-manrope  leading-6 ml-4  mt-2">
+          <span className="text-[#B6B6B6] text-[12px] font-manrope  leading-6 ml-4  mt-3">
             Symptoms
           </span>
           <span className="text-[#252525] text-[16px] font-manrope leading-6 ml-4 mr-4 mt-[-1.25]">
@@ -59,10 +59,10 @@ export default function About() {
           </span>
         </div>
         <div className="flex flex-col justify-start items-start">
-          <span className="text-[#B6B6B6] text-[12px] font-manrope leading-6 ml-4  mt-2">
+          <span className="text-[#B6B6B6] text-[12px] font-manrope leading-6 ml-4  mt-3">
             Underlying Condition
           </span>
-          <span className="text-[#252525]  text-[16px] font-manrope  leading-6 ml-4 mt-[-1.25] mb-3">
+          <span className="text-[#252525]  text-[16px] font-manrope  leading-6 ml-4 mt-[-1.25] mb-5">
             Hypertension Stage 1
           </span>
           </div>
