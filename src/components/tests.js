@@ -10,7 +10,7 @@ export default function Tests() {
   const [showPopup, setShowPopup] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-  const socket = io('https://ausa-tele-socket-server-production.up.railway.app/');
+  const socket = io('https://ausa-tele-socket-server.onrender.com/');
 
   useEffect(() => {
     // Establish the socket connection inside useEffect
