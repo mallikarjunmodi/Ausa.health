@@ -502,6 +502,9 @@ const DesktopView = () => {
           ></img>
           <p className="text-gray-400 mb-4 flex justify-center text-lg">700/2 Modi hospital compound, Bengaluru - 560086</p>
           <p className="text-gray-400 mb-4 flex justify-center text-lg">CIN: U73100KA2023PTC170052</p>
+          <p className="text-gray-400 mb-4 flex justify-center text-lg">https://ausa.health/</p>
+
+          
           <p className="text-gray-400 mb-4 flex justify-center text-lg">
             Get in touch...
           </p>
