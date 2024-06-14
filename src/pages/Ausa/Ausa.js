@@ -497,11 +497,14 @@ const DesktopView = () => {
             <p className="text-gray-400 mb-4 flex justify-center text-lg">Ausa Health</p>
 
           <p className="text-gray-500 mb-7 flex justify-center text-lg">By</p>
-          <img
+
+          <p className="text-gray-500 mb-7 flex justify-center text-lg">Prar Labs Private Limtied</p>
+
+          {/* <img
             className="mb-10 w-[25rem]"
-            src={sa}
+            src={footerlogo}
             alt="Prar Labs Private Limtied"
-          ></img>
+          ></img> */}
           <p className="text-gray-400 mb-4 flex justify-center text-lg">700/2 Modi hospital compound, Bengaluru, Karnataka, India - 560086</p>
           <p className="text-gray-400 mb-4 flex justify-center text-lg">CIN: U73100KA2023PTC170052</p>
           <p className="text-gray-400 mb-4 flex justify-center text-lg">https://ausa.health/</p>
