@@ -500,13 +500,14 @@ const DesktopView = () => {
             src={footerlogo}
             alt="PRAR LABS PVT LTD."
           ></img>
+          <p>700/2 Modi hospital compound, Bengaluru - 560086</p>
           <p className="text-gray-400 mb-4 flex justify-center text-lg">
             Get in touch...
           </p>
 
           <div className="flex items-center gap-2 justify-center font-primary mb-20 text-lg ">
             <img className="h-4" src={mail}></img>
-            <h4>prarlabs@gmail.com</h4>
+            <h4>hello@ausa.health</h4>
           </div>
         </div>
       </div>
